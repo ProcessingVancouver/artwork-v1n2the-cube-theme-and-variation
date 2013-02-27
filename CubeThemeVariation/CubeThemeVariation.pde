@@ -32,7 +32,6 @@ void setup() {
   smooth();
   strokeWeight(2);
   
-  
 }
 
 //---------
@@ -43,15 +42,14 @@ void draw() {
   // Background
   background(0);
  
-  // Style
-
-  
-  
   // Angle Lines
   angularLines();
   
   // Rectangles
   wideLoad();
+  
+  // Middle Shape
+  turret();
   
 }
 
@@ -86,5 +84,50 @@ void wideLoad() {
   }
 }
 
+//---------
+// TURRET
+//---------
 
+void turret() {
+  pushMatrix();
+  pushStyle();
+  
+  fill(0, 255);
+  stroke(255, 255);
+
+  int offset = 5;
+  int num = 15;
+
+  for(int i = 0; i < num; i++) {
+    translate(-offset, offset);
+    beginShape();
+      vertex(-5,            height * 0.50);  // Bottom Left
+      vertex(width + 5,     height * 0.50);  // Bottom Right
+      vertex(width + 5,     height * 0.45);  // Top Right
+      
+      vertex(width * 0.80,   height * 0.45); // Right Turret Bottom Right
+      vertex(width * 0.80,   height * 0.35); // Right Turret Top Right
+      vertex(width * 0.75,  height * 0.35);  // Right Turret Top Left
+      vertex(width * 0.75,  height * 0.45);  // Right Turret Bottom Left
+      
+      vertex(width * 0.55,  height * 0.45);  // Middle Turret Bottom Right
+      vertex(width * 0.55,  height * 0.35);  // Middle Turret Top Right
+      vertex(width * 0.50,  height * 0.35);  // Middle Turret Top Left
+      vertex(width * 0.50,  height * 0.45);  // Middle Turret Bottom Left
+      
+      vertex(width * 0.35,  height * 0.45);  // Left Turret Bottom Right
+      vertex(width * 0.35,  height * 0.35);  // Left Turret Top Right
+      vertex(width * 0.30,  height * 0.35);  // Left Turret Top Left
+      vertex(width * 0.30,  height * 0.45);  // Left Turret Bottom Left
+      
+      vertex(width * 0.05,  height * 0.45);  // Left Turret Bottom Right
+      vertex(width * 0.05,  height * 0.25);  // Left Turret Top Right
+      vertex(width * -0.05,  height * 0.25);  // Left Turret Top Left
+      vertex(width * -0.05,  height * 0.45);  // Left Turret Bottom Left    
+    endShape();
+  }  
+  
+  popMatrix();
+  popStyle();
+}
 
