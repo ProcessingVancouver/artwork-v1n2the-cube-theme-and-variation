@@ -27,8 +27,8 @@ void setup() {
   // Screen
   size(600, 600, P3D);
   background(0);
-  stroke(255);
-  fill(0);
+  fill(0, 255);
+  stroke(255, 255);
   smooth();
   strokeWeight(2);
   
@@ -50,7 +50,13 @@ void draw() {
   
   // Turret Shapes
   turret();
-  turretTL();
+  turretML();
+  turretMM();
+  turretMR();
+  
+  // Rectangles
+  leftRect();
+  rightRect();
   
 }
 
@@ -60,10 +66,6 @@ void draw() {
 
 void angularLines() {
   pushMatrix();
-  pushStyle();
-  
-  stroke(255, 255);
-  noFill();
   
   int offset = 10;
   
@@ -72,7 +74,6 @@ void angularLines() {
   }
   
   popMatrix();
-  popStyle();
 }
 
 //---------
@@ -81,10 +82,6 @@ void angularLines() {
 
 void wideLoad() {
   pushMatrix();
-  pushStyle();
-  
-  fill(0, 255);
-  stroke(255, 255);
 
   int offset = 5;
   int num = 15;
@@ -97,20 +94,15 @@ void wideLoad() {
   }
   
   popMatrix();
-  popStyle();
 }
 
 //---------
-// TURRET
+// TURRETS
 //---------
 
 void turret() {
   pushMatrix();
-  pushStyle();
   
-  fill(0, 255);
-  stroke(255, 255);
-
   int offset = 5;
   int num = 15;
   translate(66, 0);
@@ -140,41 +132,94 @@ void turret() {
       vertex(width * 0.05,  height * 0.25);  // Left Turret Top Right
       vertex(width * -0.05,  height * 0.25);  // Left Turret Top Left
       vertex(width * -0.05,  height * 0.45);  // Left Turret Bottom Left    
-    endShape();
+    endShape(CLOSE);
   }  
-  
   popMatrix();
-  popStyle();
 }
 
-//---------
-// TURRET TL
-//---------
-
-void turretTL() {
+void turretML() {
   pushMatrix();
-  pushStyle();
-  
-  fill(0, 255);
-  stroke(255, 255);
-
   int offset = 5;
   int num = 15;
-  translate(66, -75);
+  translate(66, -25);
   for(int i = 0; i < num; i++) {
     translate(-offset, offset);
     beginShape();
-      vertex(width * 0.20, height * 0.01);  // Bottom Left
-      vertex(width * 0.20, height * 0.35);  // Bottom Right
-      vertex(width * 0.40, height * 0.35);
-      vertex(width * 0.40, height * 0.25);
-      vertex(width * 0.28, height * 0.25);
-      vertex(width * 0.28, height * 0.01);
-      
+      vertex(width * 0.30, height * 0.01);  
+      vertex(width * 0.30, height * 0.35);  
+      vertex(width * 0.45, height * 0.35);
+      vertex(width * 0.45, height * 0.25);
+      vertex(width * 0.35, height * 0.25);
+      vertex(width * 0.35, height * 0.01); 
+    endShape(CLOSE);
+  }  
+  popMatrix();
+}
+
+void turretMM() {
+  pushMatrix();
+  int offset = 5;
+  int num = 15;
+  translate(66, -25);
+  for(int i = 0; i < num; i++) {
+    translate(-offset, offset);
+    beginShape();
+      vertex(width * 0.50, height * 0.10);  
+      vertex(width * 0.50, height * 0.35);  
+      vertex(width * 0.65, height * 0.35);
+      vertex(width * 0.65, height * 0.25);
+      vertex(width * 0.55, height * 0.25);
+      vertex(width * 0.55, height * 0.10); 
+    endShape(CLOSE);
+  }   
+  popMatrix();
+}
+
+void turretMR() {
+  pushMatrix();
+
+  int offset = 5;
+  int num = 15;
+  translate(66, -25);
+  for(int i = 0; i < num; i++) {
+    translate(-offset, offset);
+    beginShape();
+      vertex(width * 0.75, height * 0.10);  
+      vertex(width * 0.75, height * 0.35);  
+      vertex(width * 0.90, height * 0.35);
+      vertex(width * 0.90, height * 0.25);
+      vertex(width * 0.80, height * 0.25);
+      vertex(width * 0.80, height * 0.10); 
     endShape(CLOSE);
   }  
   
   popMatrix();
-  popStyle();
 }
 
+//---------
+// SQUARES
+//---------
+
+void leftRect() {
+  pushMatrix();
+  int offset = 5;
+  int num = 15;
+  translate(66, -100);
+  for(int i = 0; i < num; i++) {
+    translate(-offset, offset);
+    rect(width * 0.50, height * 0.1, width * 0.15, height * 0.1);
+  }  
+  popMatrix();
+}
+
+void rightRect() {
+  pushMatrix();
+  int offset = 5;
+  int num = 15;
+  translate(66, -100);
+  for(int i = 0; i < num; i++) {
+    translate(-offset, offset);
+    rect(width * 0.75, height * 0.1, width * 0.15, height * 0.1);
+  }  
+  popMatrix();
+}
