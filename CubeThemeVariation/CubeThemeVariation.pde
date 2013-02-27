@@ -25,7 +25,7 @@ OSI/MIT license (http://recodeproject/license)
 
 void setup() {
   // Screen
-  size(600, 600, P3D);
+  size(600, 600, P2D);
   background(0);
   fill(0, 255);
   stroke(255, 255);
@@ -105,7 +105,7 @@ void turret() {
   
   int offset = 5;
   int num = 15;
-  translate(66, 0);
+  translate(66, -50);
   for(int i = 0; i < num; i++) {
     translate(-offset, offset);
     beginShape();
@@ -141,7 +141,7 @@ void turretML() {
   pushMatrix();
   int offset = 5;
   int num = 15;
-  translate(66, -25);
+  translate(66, -75);
   for(int i = 0; i < num; i++) {
     translate(-offset, offset);
     beginShape();
@@ -160,7 +160,7 @@ void turretMM() {
   pushMatrix();
   int offset = 5;
   int num = 15;
-  translate(66, -25);
+  translate(66, -75);
   for(int i = 0; i < num; i++) {
     translate(-offset, offset);
     beginShape();
@@ -180,7 +180,7 @@ void turretMR() {
 
   int offset = 5;
   int num = 15;
-  translate(66, -25);
+  translate(66, -75);
   for(int i = 0; i < num; i++) {
     translate(-offset, offset);
     beginShape();
@@ -204,7 +204,7 @@ void leftRect() {
   pushMatrix();
   int offset = 5;
   int num = 15;
-  translate(66, -100);
+  translate(66, -150);
   for(int i = 0; i < num; i++) {
     translate(-offset, offset);
     rect(width * 0.50, height * 0.1, width * 0.15, height * 0.1);
@@ -216,7 +216,7 @@ void rightRect() {
   pushMatrix();
   int offset = 5;
   int num = 15;
-  translate(66, -100);
+  translate(66, -150);
   for(int i = 0; i < num; i++) {
     translate(-offset, offset);
     rect(width * 0.75, height * 0.1, width * 0.15, height * 0.1);
