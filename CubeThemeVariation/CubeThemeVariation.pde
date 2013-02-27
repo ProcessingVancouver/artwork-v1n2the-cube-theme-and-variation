@@ -48,8 +48,9 @@ void draw() {
   // Rectangles
   wideLoad();
   
-  // Middle Shape
+  // Turret Shapes
   turret();
+  turretTL();
   
 }
 
@@ -140,6 +141,37 @@ void turret() {
       vertex(width * -0.05,  height * 0.25);  // Left Turret Top Left
       vertex(width * -0.05,  height * 0.45);  // Left Turret Bottom Left    
     endShape();
+  }  
+  
+  popMatrix();
+  popStyle();
+}
+
+//---------
+// TURRET TL
+//---------
+
+void turretTL() {
+  pushMatrix();
+  pushStyle();
+  
+  fill(0, 255);
+  stroke(255, 255);
+
+  int offset = 5;
+  int num = 15;
+  translate(66, -75);
+  for(int i = 0; i < num; i++) {
+    translate(-offset, offset);
+    beginShape();
+      vertex(width * 0.20, height * 0.01);  // Bottom Left
+      vertex(width * 0.20, height * 0.35);  // Bottom Right
+      vertex(width * 0.40, height * 0.35);
+      vertex(width * 0.40, height * 0.25);
+      vertex(width * 0.28, height * 0.25);
+      vertex(width * 0.28, height * 0.01);
+      
+    endShape(CLOSE);
   }  
   
   popMatrix();
