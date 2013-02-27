@@ -58,13 +58,20 @@ void draw() {
 //---------
 
 void angularLines() {
+  pushMatrix();
+  pushStyle();
+  
   stroke(255, 255);
   noFill();
   
   int offset = 10;
+  
   for(int i = 0; i < width * 2; i+= offset) {
     line(0, i, i, 0); 
   }
+  
+  popMatrix();
+  popStyle();
 }
 
 //---------
@@ -72,6 +79,9 @@ void angularLines() {
 //---------
 
 void wideLoad() {
+  pushMatrix();
+  pushStyle();
+  
   fill(0, 255);
   stroke(255, 255);
 
@@ -79,9 +89,14 @@ void wideLoad() {
   int num = 15;
   float x = width * 0.05;
   float y = height * 0.66;
+  translate(25, 0);
+  
   for(int i = 0; i < num; i++) {
     rect( x - (offset*i), y + (offset*i), width, 30 ); 
   }
+  
+  popMatrix();
+  popStyle();
 }
 
 //---------
@@ -97,7 +112,7 @@ void turret() {
 
   int offset = 5;
   int num = 15;
-
+  translate(66, 0);
   for(int i = 0; i < num; i++) {
     translate(-offset, offset);
     beginShape();
