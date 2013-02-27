@@ -12,6 +12,13 @@ OSI/MIT license (http://recodeproject/license)
 
 */
 
+
+//---------
+// GLOBALS
+//---------
+
+
+
 //---------
 // SETUP
 //---------
@@ -25,6 +32,16 @@ void setup() {
   smooth();
   strokeWeight(2);
   
+}
+
+//---------
+// DRAW
+//---------
+
+void draw() {
+  // Background
+  background(0);
+ 
   // Angle Lines
   angularLines();
   
@@ -42,9 +59,6 @@ void setup() {
   rightRect();
   
 }
-
-
-  
 
 //---------
 // ANGULAR LINES
@@ -209,3 +223,4 @@ void rightRect() {
   }  
   popMatrix();
 }
+
