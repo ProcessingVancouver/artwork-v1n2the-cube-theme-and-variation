@@ -3,8 +3,11 @@ artwork-v1n2the-cube-theme-and-variation
 
 
 
-Part of the ReCode Project (http://recodeproject.com)
-By Processing Vancouver | http://processingvancouver.ca/
+Part of the ReCode Project 
+http://recodeproject.com
+
+By Processing Vancouver  
+http://processingvancouver.ca/
 
 Based on "The Cube: Theme and Variation Series" by Edward Zajec
 Originally published in "Computer Graphics and Art" vol1 no2, 1976
