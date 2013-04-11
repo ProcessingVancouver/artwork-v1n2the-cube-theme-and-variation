@@ -41,6 +41,7 @@ void setup() {
   leftRect();
   rightRect();
   
+  // Save Image
   save("screen.png");
   
 }
